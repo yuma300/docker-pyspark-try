@@ -11,3 +11,11 @@ services:
       - INIT_DAEMON_STEP=setup_spark
     volumes:
       - ./:/home
+  jupyter:
+    image: jupyter/pyspark-notebook
+    container_name: jupyter
+    ports:
+      - "8890:8888"
+    volumes:
+      - ./:/home/jovyan/work
+    command: start-notebook.sh --NotebookApp.password='sha1:1d14edeea5dc:b801b0fd63b4225c32bd02d5d48d4d1401cdcf94'
