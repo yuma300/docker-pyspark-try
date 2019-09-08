@@ -42,7 +42,7 @@ sqlContext = SQLContext(sc)
 
 df = sqlContext.read.format('com.databricks.spark.csv') \
     .options(header='true', inferschema='true') \
-    .load('/home/jovyan/work/sample.csv') # this is your csv file
+    .load('/home/jovyan/work/sample.csv') 
 
 df.where('id < 3').show()
 ```
